@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cek UID Free Fire | Profil Akun dari UID</title>
+<meta name="description" content="Cek profil akun Free Fire dari UID: nickname, level, peringkat Battle Royale dan Clash Squad, klan, dan login terakhir.">
+<meta property="og:title" content="Cek UID Free Fire">
+<meta property="og:description" content="Masukkan UID, lihat profil akun Free Fire dalam hitungan detik.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0A0A0C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FF6B1A'/%3E%3Ctext x='32' y='43' font-size='30' font-weight='800' text-anchor='middle' font-family='Arial' fill='%231A0B00'%3EFF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;1,700;1,800&family=Nunito+Sans:wght@400;600;800&display=swap">
+<style>
+/* Arah desain: tema Free Fire. Dasar hitam, api oranye ke kuning, huruf miring tebal (Barlow Condensed),
+   bentuk bersudut miring seperti HUD game. Semua bentuk dibuat dengan CSS, tanpa aset Garena. */
+:root{--bg:#0A0A0C;--sf:#15151A;--sf2:#1F1F27;--ln:#35353F;--tx:#F5F2EE;--mu:#ABA7B3;--ac:#FF7A00;--ye:#FFD23F;--fl:linear-gradient(180deg,#FFD23F,#FF8A00 50%,#FF4D00);--fh:linear-gradient(90deg,#FF4D00,#FF8A00,#FFD23F);--aci:#1A0B00;--er:#FF8A80;--hd:"Barlow Condensed","Arial Narrow",Impact,sans-serif;--bd:"Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+[data-theme=light]{--bg:#F3F3F5;--sf:#FFF;--sf2:#ECECF0;--ln:#CFCFD8;--tx:#15151A;--mu:#555262;--ac:#C2410C;--ye:#B45309;--fl:linear-gradient(180deg,#FBBF24,#F97316 55%,#EA580C);--er:#9B1C1C}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 1rem/1.6 var(--bd);-webkit-text-size-adjust:100%}
+a,button,label[for]{cursor:pointer}button:disabled{cursor:not-allowed}
+:focus-visible{outline:3px solid var(--ye);outline-offset:2px}
+.w{max-width:880px;margin:0 auto;padding:0 20px}a{color:inherit}
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px)}
+header::after{content:"";display:block;height:3px;background:var(--fh)}
+.bar{display:flex;align-items:center;gap:12px;min-height:60px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+.logo{display:flex;align-items:center;gap:10px;font:800 1.5rem/1 var(--hd);font-style:italic;text-transform:uppercase;letter-spacing:.03em;text-decoration:none;margin-right:auto}
+.mk{display:inline-block;padding:5px 14px 5px 12px;background:var(--fl);color:var(--aci);clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%)}
+nav{display:flex;gap:2px;overflow-x:auto;order:3;width:100%}
+nav a{padding:10px 12px;min-height:44px;display:flex;align-items:center;text-decoration:none;color:var(--mu);font:700 1.1rem var(--hd);font-style:italic;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+nav a:hover{color:var(--tx)}nav a[aria-current=page]{color:var(--tx);box-shadow:inset 0 -3px 0 var(--ac)}
+.tg{min-width:44px;min-height:44px;padding:0 14px;font:700 1.05rem var(--hd);text-transform:uppercase;letter-spacing:.05em;color:var(--tx);background:var(--sf);border:1.5px solid var(--ln);border-radius:4px}
+.tg:hover{border-color:var(--ac)}
+@media(min-width:720px){nav{order:0;width:auto;margin-right:auto}.bar{flex-wrap:nowrap}.logo{margin-right:12px}}
+.hero{position:relative;isolation:isolate;padding:50px 0 30px}
+.hero::before{content:"";position:absolute;z-index:-1;inset:-70px -20px 0;background:radial-gradient(55% 75% at 88% 0,rgba(255,106,0,.30),transparent 70%),repeating-linear-gradient(135deg,transparent 0 16px,rgba(128,128,140,.07) 16px 18px)}
+h1{margin:0 0 14px;font:800 clamp(2.9rem,12vw,5rem)/.92 var(--hd);font-style:italic;text-transform:uppercase}
+h1 span{color:var(--ye)}
+.lead{margin:0 0 26px;color:var(--mu);max-width:36em}
+form{display:grid;gap:8px}.fl{font:800 1.05rem var(--hd);font-style:italic;text-transform:uppercase;letter-spacing:.06em}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+input{flex:1 1 220px;min-height:60px;padding:0 18px;font:700 1.55rem var(--hd);letter-spacing:.06em;color:var(--tx);background:var(--sf);border:2px solid var(--ln);border-left:7px solid var(--ac);border-radius:4px}
+input::placeholder{color:var(--mu);font:600 1rem var(--bd);letter-spacing:0}
+input:hover{border-color:var(--mu);border-left-color:var(--ac)}input:focus{border-color:var(--ye);border-left-color:var(--ye);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--ye) 30%,transparent)}
+input[aria-invalid=true]{border-color:var(--er);border-left-color:var(--er)}
+.go{min-height:60px;padding:0 40px;font:800 1.45rem var(--hd);font-style:italic;text-transform:uppercase;letter-spacing:.05em;color:var(--aci);background:var(--fl);border:0;clip-path:polygon(14px 0,100% 0,calc(100% - 14px) 100%,0 100%);transition:filter .15s}
+.go:hover{filter:brightness(1.12)}.go:active{filter:brightness(.9)}.go:disabled{filter:grayscale(1) opacity(.5)}
+.go:focus-visible{outline:3px solid var(--aci);outline-offset:-7px}
+.hint{margin:0;font-size:.875rem;color:var(--mu);min-height:1.4em}.hint.err{color:var(--er);font-weight:700}
+.kbd{font:700 .85rem var(--hd);padding:1px 7px;border:1px solid var(--ln);border-radius:3px;background:var(--sf)}
+.rec{margin-top:16px;display:none}.rec.on{display:block}.rec p{margin:0 0 8px;font-size:.875rem;color:var(--mu)}
+.rec ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 16px;font:700 1.15rem var(--hd);letter-spacing:.06em;color:var(--tx);background:var(--sf);border:1.5px solid var(--ln);border-left:4px solid var(--ac);border-radius:3px}
+.chip:hover{border-color:var(--ye);border-left-color:var(--ye);color:var(--ye)}
+#result{margin:30px 0 56px;scroll-margin-top:90px}#result:focus{outline:none}
+.note{padding:24px;background:var(--sf);border:1.5px dashed var(--ln);border-radius:4px;color:var(--mu)}
+.note strong{display:block;color:var(--tx);margin-bottom:4px;font:800 1.4rem var(--hd);font-style:italic;text-transform:uppercase}
+.note.err{border-style:solid;border-color:var(--er)}.note.err strong{color:var(--er)}
+.rt{margin-top:12px;min-height:44px;padding:0 22px;font:700 1.1rem var(--hd);text-transform:uppercase;letter-spacing:.05em;color:var(--tx);background:transparent;border:1.5px solid var(--tx);border-radius:4px}
+.rt:hover{background:var(--tx);color:var(--bg)}
+.sk{display:grid;gap:12px}.sk i{display:block;height:20px;border-radius:4px;background:linear-gradient(90deg,var(--sf2) 30%,var(--ln) 50%,var(--sf2) 70%);background-size:300% 100%;animation:sh 1.4s linear infinite}
+.sk i:nth-child(1){height:56px;width:60%}.sk i:nth-child(2){height:90px}.sk i:nth-child(4){width:80%}
+@keyframes sh{to{background-position:-300% 0}}
+.card{background:var(--sf);border:1px solid var(--ln);clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,0 100%)}
+.card::before{content:"";display:block;height:6px;background:var(--fh)}
+.ch{display:flex;gap:16px;align-items:center;padding:20px 22px;background:linear-gradient(135deg,var(--sf2),var(--sf));border-bottom:1px solid var(--ln)}
+.av{flex:none;width:66px;height:74px;display:grid;place-items:center;background:var(--fl);color:var(--aci);font:800 2.2rem/1 var(--hd);font-style:italic;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.ch div{min-width:0}
+.card h2{margin:0;font:800 clamp(1.8rem,7vw,2.6rem)/1.05 var(--hd);font-style:italic;text-transform:uppercase;overflow-wrap:anywhere}
+.cl{margin:2px 0 0;color:var(--mu);overflow-wrap:anywhere}
+.lv{margin:0 24px 0 auto;flex:none;padding:5px 20px;font:800 1.3rem var(--hd);font-style:italic;color:var(--ye);background:var(--sf2);clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+.tl{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:0;padding:18px 22px 6px}
+.rank{background:var(--sf2);padding:14px 16px;grid-column:span 3;clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%)}
+.rank.br{background:linear-gradient(135deg,color-mix(in srgb,var(--ac) 30%,var(--sf2)),var(--sf2));border-left:5px solid var(--ac)}
+.rank dt,.mini dt{font-size:.82rem;color:var(--mu);font-weight:700}
+.rank dd{margin:0;font:800 2.5rem/1.05 var(--hd);font-style:italic}.rank.br dd{color:var(--ye)}
+.mini{background:var(--sf2);border-left:3px solid var(--ln);padding:10px 14px;grid-column:span 2}.mini dd{margin:0;font:800 1.5rem/1.2 var(--hd);font-style:italic}
+.ft{margin:0;padding:6px 22px}
+.fact{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 16px;padding:12px 0;border-top:1px solid var(--ln)}
+.fact dt{color:var(--mu)}.fact dd{margin:0;font-weight:800;text-align:right;overflow-wrap:anywhere}
+.ac{display:flex;gap:10px;flex-wrap:wrap;padding:14px 22px 24px}
+.bt{min-height:44px;padding:0 20px;font:700 1.1rem var(--hd);font-style:italic;text-transform:uppercase;letter-spacing:.05em;color:var(--tx);background:transparent;border:1.5px solid var(--ln);border-radius:4px}
+.bt:hover{border-color:var(--ye);color:var(--ye)}
+.pg{padding:44px 0 64px;max-width:44em}.pg h1{font-size:clamp(2.4rem,9vw,3.4rem)}.pg h2{font:800 1.6rem var(--hd);font-style:italic;text-transform:uppercase;margin:28px 0 6px}.pg p,.pg li{color:var(--mu)}.pg a{color:var(--ye);font-weight:700}.pg ul{padding-left:1.2em}
+[hidden]{display:none!important}
+footer{border-top:3px solid transparent;border-image:var(--fh) 1;background:var(--sf);padding:32px 0 28px;font-size:.9rem;color:var(--mu)}
+.fg{display:grid;gap:24px}@media(min-width:720px){.fg{grid-template-columns:1.4fr 1fr}}
+footer h3{margin:0 0 6px;font:800 1.2rem var(--hd);font-style:italic;text-transform:uppercase;letter-spacing:.04em;color:var(--tx)}footer p{margin:0 0 8px;max-width:34em}
+footer ul{list-style:none;margin:0;padding:0}footer li a{display:inline-block;padding:8px 0;text-decoration:none}footer li a:hover{color:var(--ye)}
+.cp{margin-top:20px;padding-top:16px;border-top:1px solid var(--ln)}
+#top{position:fixed;right:16px;bottom:16px;width:48px;height:48px;font:800 1.4rem var(--hd);color:var(--aci);background:var(--fl);border:0;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .2s}
+#top.on{opacity:1;pointer-events:auto}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);max-width:90vw;padding:12px 20px;background:var(--tx);color:var(--bg);font-weight:800;border-radius:4px;opacity:0;pointer-events:none;transition:opacity .2s}
+#toast.on{opacity:1}
+@media(max-width:520px){.tl .mini{grid-column:span 6}.lv{display:none}.ac .bt{flex:1 1 100%}.go{flex:1 1 100%}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="w bar">
+  <a class="logo" href="#cek" aria-label="Cek UID FF, ke halaman utama"><i class="mk">FF</i>Cek UID</a>
+  <nav aria-label="Navigasi utama">
+    <a href="#cek" data-nav="cek">Cek akun</a><a href="#tentang" data-nav="tentang">Tentang</a><a href="#privasi" data-nav="privasi">Privasi</a><a href="#syarat" data-nav="syarat">Syarat</a>
+  </nav>
+  <button class="tg" id="tg" type="button" aria-label="Ganti ke mode terang">Terang</button>
+</div></header>
+
+<main class="w" id="main">
+<section data-view="cek">
+  <div class="hero">
+    <h1>Cek akun Free Fire <span>dari UID</span></h1>
+    <p class="lead">Lihat nickname, level, peringkat Battle Royale dan Clash Squad, klan, dan login terakhir. Cukup UID, tanpa login.</p>
+    <form id="form" novalidate>
+      <label class="fl" for="uid">UID Free Fire</label>
+      <div class="row"><input id="uid" type="text" inputmode="numeric" autocomplete="off" maxlength="15" placeholder="Ketik UID, hanya angka" aria-describedby="hint"><button class="go" id="go" type="submit">Cek akun</button></div>
+      <p class="hint" id="hint">Tekan <span class="kbd">/</span> di keyboard untuk langsung mengetik.</p>
+    </form>
+    <div class="rec" id="rec"><p>UID yang pernah dicek di perangkat ini</p><ul id="rl"></ul></div>
+  </div>
+  <section id="result" tabindex="-1" aria-live="polite" aria-label="Hasil pengecekan"></section>
+</section>
+
+<section class="pg" data-view="tentang" hidden>
+  <h1>Tentang</h1>
+  <p>Cek UID FF menampilkan profil akun Free Fire dari UID yang kamu masukkan. Data diambil dari API pihak ketiga, lalu ditampilkan dalam satu kartu yang mudah dibaca.</p>
+  <h2>Yang ditampilkan</h2>
+  <ul><li>Nickname, UID, server, dan level</li><li>Peringkat Battle Royale dan Clash Squad</li><li>Klan, pet, skor kredit, Booyah Pass</li><li>Tanggal akun dibuat dan login terakhir</li></ul>
+  <h2>Yang tidak dilakukan</h2>
+  <p>Situs ini tidak meminta password, tidak meminta login, dan tidak bisa mengubah apa pun di akun game.</p>
+  <p><a href="#cek">Kembali ke halaman cek akun</a></p>
+</section>
+
+<section class="pg" data-view="privasi" hidden>
+  <h1>Kebijakan privasi</h1>
+  <p>UID yang kamu ketik dikirim ke server situs ini, lalu diteruskan ke penyedia API untuk mengambil data profil. Situs ini tidak membuat akun pengguna dan tidak menyimpan UID di database.</p>
+  <h2>Disimpan di perangkatmu</h2>
+  <p>Lima UID terakhir dan pilihan mode gelap atau terang disimpan di browser kamu (localStorage). Datanya tidak dikirim ke mana pun dan hilang kalau data browser dihapus.</p>
+  <h2>Pihak ketiga</h2>
+  <p>Penyedia API menerima UID yang kamu cek dan punya kebijakannya sendiri. Font dimuat dari Google Fonts.</p>
+  <p><a href="#cek">Kembali ke halaman cek akun</a></p>
+</section>
+
+<section class="pg" data-view="syarat" hidden>
+  <h1>Syarat penggunaan</h1>
+  <ul><li>Data ditampilkan apa adanya dari API pihak ketiga dan bisa berbeda dari yang tampil di dalam game.</li><li>Gunakan situs ini hanya untuk melihat informasi akun, bukan untuk mengganggu atau merugikan pemilik akun.</li><li>Situs ini tidak berafiliasi dengan Garena atau Free Fire. Semua merek milik pemiliknya masing-masing.</li><li>Layanan bisa berhenti atau berubah sewaktu-waktu, misalnya saat API pihak ketiga tidak tersedia.</li></ul>
+  <p><a href="#cek">Kembali ke halaman cek akun</a></p>
+</section>
+
+<section class="pg" data-view="404" hidden>
+  <h1>Halaman tidak ditemukan</h1>
+  <p>Alamat yang kamu buka tidak ada di situs ini.</p>
+  <p><a href="#cek">Ke halaman cek akun</a></p>
+</section>
+</main>
+
+<footer><div class="w">
+  <div class="fg">
+    <div><h3>Cek UID FF</h3><p>Alat bantu untuk melihat profil akun Free Fire dari UID. Data dari API pihak ketiga, bisa berbeda dari yang tampil di dalam game.</p></div>
+    <div><h3>Halaman</h3><ul><li><a href="#cek">Cek akun</a></li><li><a href="#tentang">Tentang</a></li><li><a href="#privasi">Kebijakan privasi</a></li><li><a href="#syarat">Syarat penggunaan</a></li></ul></div>
+  </div>
+  <p class="cp">&copy; 2026 Cek UID FF. Tidak berafiliasi dengan Garena.</p>
+</div></footer>
+
+<button id="top" type="button" aria-label="Kembali ke atas">&uarr;</button>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){"use strict";
+var $=function(s){return document.querySelector(s)},form=$("#form"),inp=$("#uid"),goB=$("#go"),hint=$("#hint"),res=$("#result"),rec=$("#rec"),rl=$("#rl"),KEY="cekff:recent",ctl=null,last="";
+function el(t,p,c){var n=document.createElement(t);if(p)Object.keys(p).forEach(function(k){k==="class"?n.className=p[k]:k==="text"?n.textContent=p[k]:n.setAttribute(k,p[k])});(c||[]).forEach(function(x){if(x)n.appendChild(x)});return n}
+function clr(n){while(n.firstChild)n.removeChild(n.firstChild)}
+function sv(v){return v==null||v===""?"-":String(v)}
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+/* Tema: ikuti sistem, pilihan manual disimpan */
+var root=document.documentElement,tg=$("#tg");
+function theme(t){root.setAttribute("data-theme",t);tg.textContent=t==="dark"?"Terang":"Gelap";tg.setAttribute("aria-label",t==="dark"?"Ganti ke mode terang":"Ganti ke mode gelap");$('meta[name=theme-color]').setAttribute("content",t==="dark"?"#0A0A0C":"#F3F3F5")}
+theme(store("cekff:theme")||(window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"));
+tg.addEventListener("click",function(){var t=root.getAttribute("data-theme")==="dark"?"light":"dark";theme(t);store("cekff:theme",t)});
+/* Toast */
+var tt;function toast(m){var t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(function(){t.classList.remove("on")},2200)}
+/* Rute berbasis hash */
+var T={cek:"Cek UID Free Fire | Profil Akun dari UID",tentang:"Tentang | Cek UID FF",privasi:"Kebijakan privasi | Cek UID FF",syarat:"Syarat penggunaan | Cek UID FF","404":"Halaman tidak ditemukan | Cek UID FF"};
+function route(){var h=(location.hash||"#cek").slice(1);var v=T[h]&&h!=="404"?h:"404";
+ document.querySelectorAll("[data-view]").forEach(function(s){s.hidden=s.getAttribute("data-view")!==v});
+ document.querySelectorAll("[data-nav]").forEach(function(a){v===a.getAttribute("data-nav")?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")});
+ document.title=T[v];if(v!=="cek")window.scrollTo(0,0)}
+window.addEventListener("hashchange",route);
+/* Riwayat */
+function recent(){try{var a=JSON.parse(store(KEY)||"[]");return Array.isArray(a)?a.filter(function(x){return/^\d{5,15}$/.test(x)}).slice(0,5):[]}catch(e){return[]}}
+function drawRec(){var l=recent();clr(rl);rec.classList.toggle("on",l.length>0);l.forEach(function(u){var b=el("button",{type:"button","class":"chip",text:u});b.addEventListener("click",function(){inp.value=u;check(u)});rl.appendChild(el("li",null,[b]))})}
+function saveRec(u){var l=recent().filter(function(x){return x!==u});l.unshift(u);store(KEY,JSON.stringify(l.slice(0,5)));drawRec()}
+function setHint(m,e){hint.textContent=m;hint.className="hint"+(e?" err":"");inp.setAttribute("aria-invalid",e?"true":"false")}
+/* Keadaan: kosong, memuat, galat */
+function empty(){clr(res);res.appendChild(el("div",{"class":"note"},[el("strong",{text:"Belum ada akun yang dicek"}),document.createTextNode("Ketik UID di kolom atas, lalu tekan Cek akun.")]))}
+function loading(){clr(res);res.setAttribute("aria-busy","true");res.appendChild(el("div",{"class":"sk",role:"status","aria-label":"Mengambil data akun"},[el("i"),el("i"),el("i"),el("i")]))}
+function fail(t,b,retry){clr(res);res.removeAttribute("aria-busy");var n=el("div",{"class":"note err",role:"alert"},[el("strong",{text:t}),document.createTextNode(b)]);
+ if(retry){var r=el("button",{type:"button","class":"rt",text:"Coba lagi"});r.addEventListener("click",function(){check(last)});n.appendChild(document.createElement("br"));n.appendChild(r)}res.appendChild(n)}
+function fact(a,b){return el("div",{"class":"fact"},[el("dt",{text:a}),el("dd",{text:b})])}
+function mini(a,b){return el("div",{"class":"mini"},[el("dt",{text:a}),el("dd",{text:b})])}
+function copy(txt,ok){if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(function(){toast(ok)},function(){toast("Gagal menyalin")});else toast("Gagal menyalin")}
+function render(d){var s=d.summary||{},r=d.raw_data||{},pet=r.petInfo||{},cl=r.clanBasicInfo||{},nick=sv(s.Nickname);
+ var clan=sv(s.Clan_Name);if(cl.memberNum&&cl.capacity)clan+=", "+cl.memberNum+" dari "+cl.capacity+" anggota";
+ var b1=el("button",{type:"button","class":"bt",text:"Salin UID"});b1.addEventListener("click",function(){copy(String(s.UID),"UID tersalin")});
+ var b2=el("button",{type:"button","class":"bt",text:"Bagikan hasil"});
+ b2.addEventListener("click",function(){var u=location.origin+location.pathname+"?uid="+encodeURIComponent(s.UID);if(navigator.share)navigator.share({title:"Profil Free Fire "+nick,url:u}).catch(function(){});else copy(u,"Tautan tersalin")});
+ var b3=el("button",{type:"button","class":"bt",text:"Cek ulang"});b3.addEventListener("click",function(){check(String(s.UID))});
+ clr(res);res.removeAttribute("aria-busy");
+ res.appendChild(el("article",{"class":"card"},[
+  el("div",{"class":"ch"},[el("div",{"class":"av","aria-hidden":"true",text:nick.charAt(0).toUpperCase()}),el("div",null,[el("h2",{text:nick}),el("p",{"class":"cl",text:"UID "+sv(s.UID)+", server "+sv(s.Server)})]),el("span",{"class":"lv",text:"Lv "+sv(s.Level)})]),
+  el("dl",{"class":"tl"},[el("div",{"class":"rank br"},[el("dt",{text:"Peringkat Battle Royale"}),el("dd",{text:sv(s.BR_Ranking)})]),el("div",{"class":"rank"},[el("dt",{text:"Peringkat Clash Squad"}),el("dd",{text:sv(s.CS_Ranking)})]),mini("Total like",sv(s.Total_Likes)),mini("Prime level",sv(s.Prime_Level)),mini("Skor kredit",sv(s.Credit_Score))]),
+  el("dl",{"class":"ft"},[fact("Klan",clan),pet.name?fact("Pet",pet.name+(pet.level?" (level "+pet.level+")":"")):null,fact("Booyah Pass",sv(s.Booyah_Pass)),s.Signature&&s.Signature!=="-"?fact("Tanda tangan",s.Signature):null,fact("Akun dibuat",sv(s.Created_At)),fact("Login terakhir",sv(s.Last_Login))]),
+  el("div",{"class":"ac"},[b1,b2,b3])]));
+ res.focus({preventScroll:true});res.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})}
+function check(u){u=String(u).replace(/\s+/g,"");
+ if(!/^\d{5,15}$/.test(u)){setHint("UID harus angka, 5 sampai 15 digit.",true);inp.focus();return}
+ if(navigator.onLine===false){fail("Sedang offline","Sambungkan ke internet, lalu coba lagi.",true);last=u;return}
+ setHint("",false);last=u;if(ctl)ctl.abort();ctl=new AbortController();var me=ctl;goB.disabled=true;loading();
+ var to=setTimeout(function(){me.abort()},20000);
+ fetch("/api/ff?uid="+encodeURIComponent(u),{signal:me.signal,headers:{Accept:"application/json"}})
+ .then(function(x){return x.json().catch(function(){return{}}).then(function(b){return{s:x.status,b:b}})})
+ .then(function(x){if(x.s===200&&x.b&&x.b.status===true&&x.b.summary){render(x.b);saveRec(u)}
+  else if(x.s===404)fail("Akun tidak ditemukan","Tidak ada akun dengan UID "+u+". Periksa lagi angkanya.",false)
+  else if(x.s===429)fail("Terlalu banyak permintaan","Tunggu satu menit, lalu coba lagi.",true)
+  else if(x.s===400)fail("UID tidak valid","UID harus angka, 5 sampai 15 digit.",false)
+  else fail("Server data sedang bermasalah","Data belum bisa diambil dari penyedia API. Coba lagi beberapa saat lagi.",true)})
+ .catch(function(){if(me===ctl)fail("Tidak bisa terhubung","Periksa koneksi internet, lalu coba lagi.",true)})
+ .then(function(){clearTimeout(to);if(me===ctl)goB.disabled=false})}
+form.addEventListener("submit",function(e){e.preventDefault();check(inp.value)});
+inp.addEventListener("input",function(){var c=inp.value.replace(/\D+/g,"");if(c!==inp.value)inp.value=c;if(hint.classList.contains("err"))setHint("Tekan / di keyboard untuk langsung mengetik.",false)});
+document.addEventListener("keydown",function(e){if(e.key==="/"&&!/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)&&!$("[data-view=cek]").hidden){e.preventDefault();inp.focus()}});
+/* Tombol kembali ke atas */
+var top=$("#top");addEventListener("scroll",function(){top.classList.toggle("on",scrollY>500)},{passive:true});
+top.addEventListener("click",function(){scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})});
+route();drawRec();empty();
+var q=new URLSearchParams(location.search).get("uid");if(q&&/^\d{5,15}$/.test(q)){inp.value=q;check(q)}
+})();
+</script>
+</body>
+</html>
